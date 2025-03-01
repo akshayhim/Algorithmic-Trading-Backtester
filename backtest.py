@@ -13,7 +13,7 @@ cerebro = bt.Cerebro()
 data = bt.feeds.PandasData(dataname=data_loader.fetch_data())
 cerebro.adddata(data)
 
-# Choose out of the 3 indicators (SMA, RSI, Bollinger Bands) or follow a multi signal strategy which combines the 3 indicators and triggers trade signal based on cocnditions set in the strategy file
+# Choose out of the 3 indicators (SMACrossover, RSIStrategy, BollingerStrategy) or follow a 'MultiSignalStrategy' which combines the 3 indicators and triggers trade signal based on cocnditions set in the strategy file
 cerebro.addstrategy(MultiSignalStrategy)
 
 # tweak to allocate initial portfolio cash for trading

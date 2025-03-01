@@ -1,7 +1,7 @@
 import os
 import yfinance as yf
 
-ticker="ADANIENT.NS"
+ticker="HDFCBANK.NS"
 
 def fetch_data(ticker=ticker, period="5y"):
     """Fetch historical data and save it to a CSV file."""
