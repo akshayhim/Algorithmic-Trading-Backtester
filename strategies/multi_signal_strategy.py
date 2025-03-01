@@ -21,7 +21,7 @@ class MultiSignalStrategy(bt.Strategy):
     def next(self):
         cash = self.broker.getcash()
         # tweak to decide %age of cash allocated for each trade, increasing => more risk & potentially reward and vice versa 
-        risk_per_trade = cash * 0.50
+        risk_per_trade = cash * 1
         size = risk_per_trade // self.data.close[0]
 
         if not self.position:

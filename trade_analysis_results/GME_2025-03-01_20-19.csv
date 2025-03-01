@@ -1,0 +1,30 @@
+Created by Akshay Himatsingka akshayhimat@gmail.com
+Metric,Value
+Trade Analysis,
+total - total,6
+total - open,0
+total - closed,6
+streak - won,"AutoOrderedDict({'current': 1, 'longest': 1})"
+streak - lost,"AutoOrderedDict({'current': 0, 'longest': 2})"
+pnl - gross,"AutoOrderedDict({'total': -2243.962727546692, 'average': -373.99378792444867})"
+pnl - net,"AutoOrderedDict({'total': -2347.5726353101736, 'average': -391.2621058850289})"
+won - total,3
+won - pnl,"AutoOrderedDict({'total': 1923.26447706604, 'average': 641.0881590220133, 'max': 1360.6184835281372})"
+lost - total,3
+lost - pnl,"AutoOrderedDict({'total': -4270.837112376214, 'average': -1423.6123707920713, 'max': -2320.77775})"
+long - total,6
+long - pnl,"AutoOrderedDict({'total': -2347.5726353101736, 'average': -391.2621058850289, 'won': AutoOrderedDict({'total': 1923.26447706604, 'average': 641.0881590220133, 'max': 1360.6184835281372}), 'lost': AutoOrderedDict({'total': -4270.837112376214, 'average': -1423.6123707920713, 'max': -2320.77775})})"
+long - won,3
+long - lost,3
+short - total,0
+short - pnl,"AutoOrderedDict({'total': 0.0, 'average': 0.0, 'won': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0}), 'lost': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0})})"
+short - won,0
+short - lost,0
+len - total,124
+len - average,20.666666666666668
+len - max,33
+len - min,1
+len - won,"AutoOrderedDict({'total': 89, 'average': 29.666666666666668, 'max': 33, 'min': 23})"
+len - lost,"AutoOrderedDict({'total': 35, 'average': 11.666666666666666, 'max': 28, 'min': 1})"
+len - long,"AutoOrderedDict({'total': 124, 'average': 20.666666666666668, 'max': 33, 'min': 1, 'won': AutoOrderedDict({'total': 89, 'average': 29.666666666666668, 'max': 33, 'min': 23}), 'lost': AutoOrderedDict({'total': 35, 'average': 11.666666666666666, 'max': 28, 'min': 1})})"
+len - short,"AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807, 'won': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807}), 'lost': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807})})"

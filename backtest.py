@@ -8,21 +8,23 @@ from strategies.bollinger_strategy import BollingerStrategy
 from strategies.multi_signal_strategy import MultiSignalStrategy
 from datetime import datetime
 
+# Initialize Cerebro engine
 cerebro = bt.Cerebro()
 
+# Load data
 data = bt.feeds.PandasData(dataname=data_loader.fetch_data())
 cerebro.adddata(data)
 
-# Choose out of the 3 indicators (SMACrossover, RSIStrategy, BollingerStrategy) or follow a 'MultiSignalStrategy' which combines the 3 indicators and triggers trade signal based on cocnditions set in the strategy file
+# Choose strategy (SMACrossover, RSIStrategy, BollingerStrategy, or MultiSignalStrategy)
 cerebro.addstrategy(MultiSignalStrategy)
 
-# tweak to allocate initial portfolio cash for trading
+# Set initial portfolio cash
 cerebro.broker.set_cash(10000)
 
-# tweak to adjust for borkerage comission in %age 
+# Set commission (e.g., 0.1%)
 cerebro.broker.setcommission(commission=0.001)
 
-# cerebro analyzers being added
+# Add analyzers for performance metrics
 cerebro.addanalyzer(bt.analyzers.TradeAnalyzer, _name='trade_analyzer')
 cerebro.addanalyzer(bt.analyzers.SharpeRatio, _name='sharpe')
 cerebro.addanalyzer(bt.analyzers.DrawDown, _name='drawdown')
@@ -30,37 +32,49 @@ cerebro.addanalyzer(bt.analyzers.Returns, _name='returns')
 
 print("Project by Akshay Himatsingka akshayhimat@gmail.com")
 
+# Capture starting portfolio value
 print("\nStarting Portfolio Value: %.2f" % cerebro.broker.getvalue())
+init_portfolio = cerebro.broker.getvalue()
 
+# Run backtest
 results = cerebro.run()
 
+# Capture final portfolio value
 print("Final Portfolio Value: %.2f" % cerebro.broker.getvalue())
-
+end_portfolio = cerebro.broker.getvalue()
 
 # Accessing performance metrics
 strat = results[0]
 
-# code section for printing performance metrics
+# Code section for printing performance metrics
 #####################################################################
 print("\nPerformance Metrics:")
-    
-# Total Return
-total_return = strat.analyzers.returns.get_analysis()['rtot']
-print(f"Total Return: {total_return * 100:.2f}%")
 
-# Annualized Return
-annual_return = strat.analyzers.returns.get_analysis()['rnorm']
-print(f"Annualized Return: {annual_return * 100:.2f}%")
+# Total Return (calculated manually)
+total_return = ((end_portfolio - init_portfolio) / init_portfolio) * 100
+print(f"Total Return: {total_return:.2f}%")
 
-# Sharpe Ratio
+number = int(data_loader.period[0])
+unit = data_loader.period[1]
+
+if unit == 'y':
+    period_reciprocal = 1 / number
+elif unit == 'm':
+    period_reciprocal = 1 / (number / 12)  
+
+# Annualized Return (from Returns analyzer)
+annualized_return = ((end_portfolio / init_portfolio) ** period_reciprocal) - 1
+print(f"Annualized Return: {annualized_return * 100:.2f}%")
+
+# Sharpe Ratio (from Sharpe analyzer)
 sharpe_ratio = strat.analyzers.sharpe.get_analysis()['sharperatio']
 print(f"Sharpe Ratio: {sharpe_ratio:.2f}")
 
-# Maximum Drawdown
+# Maximum Drawdown (from DrawDown analyzer)
 max_drawdown = strat.analyzers.drawdown.get_analysis()['max']['drawdown']
 print(f"Maximum Drawdown: {max_drawdown:.2f}%")
 
-# Trade Analysis
+# Trade Analysis (from TradeAnalyzer)
 trade_analysis = strat.analyzers.trade_analyzer.get_analysis()
 total_trades = trade_analysis.total.closed if 'closed' in trade_analysis.total else 0
 win_rate = (trade_analysis.won.total / total_trades) * 100 if total_trades > 0 else 0
@@ -69,11 +83,8 @@ print(f"Total Trades: {total_trades}")
 print(f"Win Rate: {win_rate:.2f}%")
 #####################################################################
 
-
-# code section for creating and storing trade analysis in sepearate file
+# Code section for creating and storing trade analysis in a separate file
 #####################################################################
-trade_analysis = strat.analyzers.trade_analyzer.get_analysis()
-
 output_folder = "trade_analysis_results"
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
@@ -101,4 +112,5 @@ with open(filename, mode="w", newline="") as csv_file:
 print(f"\nDetailed Analysis saved to {filename}\n")
 #####################################################################
 
+# Plot results
 cerebro.plot()
