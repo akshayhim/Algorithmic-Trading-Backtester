@@ -2,6 +2,10 @@
 
 A backtesting framework for algorithmic trading strategies that supports various indicators such as SMA, RSI, and Bollinger Bands. The framework also allows combining the strengths of all three indicators to generate multi-signal strategies and evaluate their performance on historical stock price data. Users can adjust risk exposure through cash allocation and stop-loss mechanisms, optimize parameters, and analyze performance metrics.
 
+## Screenshots
+
+![screenshot](screenshots/combinedss.png)
+
 ## Features
 
 - Backtest various trading strategies on any listed security of your choice
@@ -55,16 +59,12 @@ View performance metrics and detialed analysis in the terminal and the generated
 ## Project Structure
 
 algorithmic-trading-backtester/
-├── strategies/
-│ ├── sma_strategy.py # SMA strategy logic
-│ ├── rsi_strategy.py # RSI strategy logic
-│ ├── bollinger_strategy.py # Bollinger Bands strategy logic
-│ └── multi_signal_strategy.py # Multi-signal strategy combining all indicators
-├── data_loader.py # Fetches historical stock data
-├── backtest.py # Main script to run backtests
-├── requirements.txt # Python dependencies
-└── README.md # Project documentation
+strategies/
+sma_strategy.py # SMA strategy logic
+rsi_strategy.py # RSI strategy logic
+bollinger_strategy.py # Bollinger Bands strategy logic
+multi_signal_strategy.py # Multi-signal strategy combining all indicators
 
-## Screenshots
-
-![backtest chart](screenshots/combinedss.png)
+data_loader.py # Fetches historical stock data
+backtest.py # Main script to run backtests
+requirements.txt # Python dependencies
