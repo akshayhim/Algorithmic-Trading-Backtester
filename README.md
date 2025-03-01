@@ -58,7 +58,7 @@ View performance metrics and detialed analysis in the terminal and the generated
 
 ## Project Structure
 
-algorithmic-trading-backtester/
+algorithmic-trading-backtester/  
 strategies/
 sma_strategy.py # SMA strategy logic
 rsi_strategy.py # RSI strategy logic
