@@ -67,5 +67,4 @@ algorithmic-trading-backtester/
 
 ## Screenshots
 
-![backtest chart](screenshots/chart.png)
-![terminal ss](screenshots/terminal-ss.png)
+![backtest chart](screenshots/combinedss.png)
