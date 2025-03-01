@@ -73,8 +73,8 @@ requirements.txt
 
 - In backtest.py you can tweak cerebro.addstrategy to select the indicator of your choice
 - In backtest.py you can tweak cerebro.broker.set_cash & setcommission to alter initial portfolio cash and brokerage comission
+- In backtest.py you can alter the cerebro.addsizer percents value to decide the %age of portfolio cash allocated for each trade. Change it according to your risk apetite. (keeping it 100 may cause problems because some free cash is needed for brokerage charges)
 - In individual stratergies files, you can alter the params to depending on your trading style (ex - Fast SMA period, RSI period, etc)
-- In individual stratergies files, you can alter the risk_per_trade to decide %age of portfolio cash allocated for each trade depending on your risk apetite
 - In individual stratergies files, you can alter self.stop_loss_price to change the stop-loss for each trade
 
 ## Performance Metrics
