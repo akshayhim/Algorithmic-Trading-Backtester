@@ -21,10 +21,10 @@ cerebro.addstrategy(MultiSignalStrategy)
 # Set initial portfolio cash
 cerebro.broker.set_cash(10000)
 
-# Set commission (e.g., 0.1%)
+# Set brokerage commission
 cerebro.broker.setcommission(commission=0.001)
 
-# Add analyzers for performance metrics
+# Adding analyzers for performance metrics
 cerebro.addanalyzer(bt.analyzers.TradeAnalyzer, _name='trade_analyzer')
 cerebro.addanalyzer(bt.analyzers.SharpeRatio, _name='sharpe')
 cerebro.addanalyzer(bt.analyzers.DrawDown, _name='drawdown')
@@ -32,49 +32,49 @@ cerebro.addanalyzer(bt.analyzers.Returns, _name='returns')
 
 print("Project by Akshay Himatsingka akshayhimat@gmail.com")
 
-# Capture starting portfolio value
+#  Starting portfolio value
 print("\nStarting Portfolio Value: %.2f" % cerebro.broker.getvalue())
 init_portfolio = cerebro.broker.getvalue()
 
-# Run backtest
 results = cerebro.run()
 
-# Capture final portfolio value
+# Final portfolio value
 print("Final Portfolio Value: %.2f" % cerebro.broker.getvalue())
 end_portfolio = cerebro.broker.getvalue()
 
-# Accessing performance metrics
 strat = results[0]
 
 # Code section for printing performance metrics
 #####################################################################
 print("\nPerformance Metrics:")
 
-# Total Return (calculated manually)
+# Total Return
 total_return = ((end_portfolio - init_portfolio) / init_portfolio) * 100
 print(f"Total Return: {total_return:.2f}%")
 
+
+# Extracting integer part from period #
 number = int(data_loader.period[0])
 unit = data_loader.period[1]
-
 if unit == 'y':
     period_reciprocal = 1 / number
 elif unit == 'm':
-    period_reciprocal = 1 / (number / 12)  
+    period_reciprocal = 1 / (number / 12)
+#######################################
 
-# Annualized Return (from Returns analyzer)
+# Annualized Return
 annualized_return = ((end_portfolio / init_portfolio) ** period_reciprocal) - 1
 print(f"Annualized Return: {annualized_return * 100:.2f}%")
 
-# Sharpe Ratio (from Sharpe analyzer)
+# Sharpe Ratio
 sharpe_ratio = strat.analyzers.sharpe.get_analysis()['sharperatio']
 print(f"Sharpe Ratio: {sharpe_ratio:.2f}")
 
-# Maximum Drawdown (from DrawDown analyzer)
+# Maximum Drawdown
 max_drawdown = strat.analyzers.drawdown.get_analysis()['max']['drawdown']
 print(f"Maximum Drawdown: {max_drawdown:.2f}%")
 
-# Trade Analysis (from TradeAnalyzer)
+# Trade Analysis
 trade_analysis = strat.analyzers.trade_analyzer.get_analysis()
 total_trades = trade_analysis.total.closed if 'closed' in trade_analysis.total else 0
 win_rate = (trade_analysis.won.total / total_trades) * 100 if total_trades > 0 else 0
@@ -112,5 +112,4 @@ with open(filename, mode="w", newline="") as csv_file:
 print(f"\nDetailed Analysis saved to {filename}\n")
 #####################################################################
 
-# Plot results
 cerebro.plot()

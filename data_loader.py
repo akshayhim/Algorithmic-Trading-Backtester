@@ -5,8 +5,8 @@ ticker="ITC.NS"
 period="5y"
 
 def fetch_data(ticker=ticker, period=period):
-    """Fetch historical data and save it to a CSV file."""
-
+    
+    # Fetching historical data and saving it to a CSV file inside the data folder
     if not os.path.exists("data"):
         os.makedirs("data")
 

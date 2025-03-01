@@ -1,7 +1,5 @@
 import backtrader as bt
 
-# Currently using SMA, RSI and Bollinger Bands indicators
-
 class MultiSignalStrategy(bt.Strategy):
     params = (
         ('fast', 10),         # Fast SMA period
@@ -26,16 +24,16 @@ class MultiSignalStrategy(bt.Strategy):
 
         if not self.position:
             buy_signals = sum([
-                self.sma_fast[0] > self.sma_slow[0],          # SMA crossover up
-                self.rsi[0] < self.params.rsi_lower,          # RSI oversold
-                self.data.close[0] < self.bb.lines.bot[0],    # Price below lower Bollinger Band
+                self.sma_fast[0] > self.sma_slow[0],          
+                self.rsi[0] < self.params.rsi_lower,          
+                self.data.close[0] < self.bb.lines.bot[0],    
             ])
 
             # Buy if at least 2 out of the 3 signals is/are true (lower num = more aggressive, higher num = more conservative)
             if buy_signals >= 2:
                 self.buy(size=size)
 
-                # stop-loss for each trade. If stock falls beow this %age of entry price, exit and book losses               
+                # Stop-loss for each trade. If stock falls beow this %age of entry price, exit and book losses               
                 self.stop_loss_price = self.data.close[0] * 0.90
 
         else:
@@ -50,6 +48,6 @@ class MultiSignalStrategy(bt.Strategy):
                 self.data.close[0] > self.bb.lines.top[0], 
             ])
 
-            # Sell if at least 1 out of 3 signals is/are true (lower num = more conservative, higher num = more aggressive)
+            # Sell if at least 2 out of 3 signals is/are true (lower num = more conservative, higher num = more aggressive)
             if sell_signals >= 2:
                 self.close()
