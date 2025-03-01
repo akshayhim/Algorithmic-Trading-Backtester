@@ -17,11 +17,6 @@ class MultiSignalStrategy(bt.Strategy):
         self.bb = bt.indicators.BollingerBands(self.data.close, period=self.params.bb_period)
 
     def next(self):
-        cash = self.broker.getcash()
-        # tweak to decide %age of cash allocated for each trade, increasing => more risk & potentially reward and vice versa 
-        risk_per_trade = cash * 1
-        size = risk_per_trade // self.data.close[0]
-
         if not self.position:
             buy_signals = sum([
                 self.sma_fast[0] > self.sma_slow[0],          
@@ -31,7 +26,7 @@ class MultiSignalStrategy(bt.Strategy):
 
             # Buy if at least 2 out of the 3 signals is/are true (lower num = more aggressive, higher num = more conservative)
             if buy_signals >= 2:
-                self.buy(size=size)
+                self.buy()
 
                 # Stop-loss for each trade. If stock falls beow this %age of entry price, exit and book losses               
                 self.stop_loss_price = self.data.close[0] * 0.90

@@ -22,7 +22,10 @@ cerebro.addstrategy(MultiSignalStrategy)
 cerebro.broker.set_cash(10000)
 
 # Set brokerage commission
-cerebro.broker.setcommission(commission=0.001)
+cerebro.broker.setcommission(commission=0.0001)
+
+# tweak to decide %age of cash allocated for each trade, increasing => more risk & potentially reward and vice versa 
+cerebro.addsizer(bt.sizers.PercentSizer, percents=80)
 
 # Adding analyzers for performance metrics
 cerebro.addanalyzer(bt.analyzers.TradeAnalyzer, _name='trade_analyzer')
