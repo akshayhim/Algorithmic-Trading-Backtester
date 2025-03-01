@@ -68,3 +68,25 @@ multi_signal_strategy.py # Multi-signal strategy combining all indicators
 data_loader.py # Fetches historical stock data  
 backtest.py # Main script to run backtests  
 requirements.txt # Python dependencies
+
+## Customizable Data Points for Tailored Backtesting
+
+- in backtest.py you can tweak cerebro.addstrategy to select the indicator of your choice
+- in backtest.py you can tweak cerebro.broker.set_cash & setcommission to alter initial portfolio cash and brokerage comission
+- in individual stratergies files, you can alter the params to depending on your trading style (ex - Fast SMA period, RSI period, etc)
+- in individual stratergies files, you can alter the risk_per_trade to decide %age of portfolio cash allocated for each trade depending on your risk apetite
+- similarly you can alter self.stop_loss_price to change the stop-loss for each trade
+
+## Performance Metrics
+
+The framework provides detailed performance metrics:
+
+- **Total Return**: Overall profit/loss of the strategy.
+- **Annualized Return**: Compounded yearly return.
+- **Sharpe Ratio**: Risk-adjusted return.
+- **Maximum Drawdown**: Largest peak-to-trough decline.
+- **Win Rate**: Percentage of profitable trades.
+
+## License
+
+This project is licensed under the MIT License. See `LICENSE` for details.
