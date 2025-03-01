@@ -1,9 +1,9 @@
 import os
 import yfinance as yf
 
-ticker="GME"
+ticker="HDFCBANK.NS"
 
-def fetch_data(ticker=ticker, period="1y"):
+def fetch_data(ticker=ticker, period="5y"):
     """Fetch historical data and save it to a CSV file."""
 
     if not os.path.exists("data"):

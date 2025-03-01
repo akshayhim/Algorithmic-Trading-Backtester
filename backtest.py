@@ -2,6 +2,9 @@ import os
 import csv
 import backtrader as bt
 from strategies.sma_cross import SMACrossover
+from strategies.rsi_strategy import RSIStrategy
+from strategies.bollinger_strategy import BollingerStrategy
+from strategies.multi_signal_strategy import MultiSignalStrategy
 import data_loader
 from datetime import datetime
 
@@ -10,23 +13,25 @@ cerebro = bt.Cerebro()
 data = bt.feeds.PandasData(dataname=data_loader.fetch_data())
 cerebro.adddata(data)
 
-cerebro.addstrategy(SMACrossover, fast=5, slow=20)
+# Choose out of the 3 indicators (SMA, RSI, Bollinger Bands) or follow a multi signal strategy which combines the 3 indicators and triggers trade signal based on cocnditions set in the strategy file
+cerebro.addstrategy(MultiSignalStrategy)
 
 cerebro.addanalyzer(bt.analyzers.TradeAnalyzer, _name='trade_analyzer')
-# cerebro.addanalyzer(bt.analyzers.DrawDown, _name='drawdown')
 
 # tweak to allocate initial portfolio cash for trading
 cerebro.broker.set_cash(10000)
+
+# tweak to adjust for borkerage comission in %age 
 cerebro.broker.setcommission(commission=0.001)
 
 print("Starting Portfolio Value: %.2f" % cerebro.broker.getvalue())
 
-# cerebro.optreturn = False
 results = cerebro.run()
 
 print("Final Portfolio Value: %.2f" % cerebro.broker.getvalue())
 
-# trade analysis
+# code section for creating and storing trade analysis in sepearate file
+#####################################################################
 strat = results[0]
 trade_analysis = strat.analyzers.trade_analyzer.get_analysis()
 
@@ -53,7 +58,6 @@ with open(filename, mode="w", newline="") as csv_file:
             writer.writerow([key, value])
 
 print(f"Analysis saved to {filename}")
-
+#####################################################################
 
 cerebro.plot()
-

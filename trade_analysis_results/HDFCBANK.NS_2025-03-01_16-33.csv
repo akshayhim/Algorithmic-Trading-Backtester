@@ -1,0 +1,29 @@
+Metric,Value
+Trade Analysis,
+total - total,27
+total - open,0
+total - closed,27
+streak - won,"AutoOrderedDict({'current': 0, 'longest': 2})"
+streak - lost,"AutoOrderedDict({'current': 2, 'longest': 3})"
+pnl - gross,"AutoOrderedDict({'total': 3856.583270542196, 'average': 142.83641742748873})"
+pnl - net,"AutoOrderedDict({'total': 3546.3799225542207, 'average': 131.34740453904521})"
+won - total,13
+won - pnl,"AutoOrderedDict({'total': 5544.861104128528, 'average': 426.52777724065595, 'max': 714.2385233432647})"
+lost - total,14
+lost - pnl,"AutoOrderedDict({'total': -1998.4811815743083, 'average': -142.7486558267363, 'max': -345.66097146411727})"
+long - total,27
+long - pnl,"AutoOrderedDict({'total': 3546.3799225542207, 'average': 131.34740453904521, 'won': AutoOrderedDict({'total': 5544.861104128528, 'average': 426.52777724065595, 'max': 714.2385233432647}), 'lost': AutoOrderedDict({'total': -1998.4811815743083, 'average': -142.7486558267363, 'max': -345.66097146411727})})"
+long - won,13
+long - lost,14
+short - total,0
+short - pnl,"AutoOrderedDict({'total': 0.0, 'average': 0.0, 'won': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0}), 'lost': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0})})"
+short - won,0
+short - lost,0
+len - total,228
+len - average,8.444444444444445
+len - max,29
+len - min,1
+len - won,"AutoOrderedDict({'total': 155, 'average': 11.923076923076923, 'max': 23, 'min': 1})"
+len - lost,"AutoOrderedDict({'total': 73, 'average': 5.214285714285714, 'max': 29, 'min': 1})"
+len - long,"AutoOrderedDict({'total': 228, 'average': 8.444444444444445, 'max': 29, 'min': 1, 'won': AutoOrderedDict({'total': 155, 'average': 11.923076923076923, 'max': 23, 'min': 1}), 'lost': AutoOrderedDict({'total': 73, 'average': 5.214285714285714, 'max': 29, 'min': 1})})"
+len - short,"AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807, 'won': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807}), 'lost': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807})})"

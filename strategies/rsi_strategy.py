@@ -1,12 +1,14 @@
 import backtrader as bt
 
-class SMACrossover(bt.Strategy):
-    params = (('fast', 10), ('slow', 50))
+class RSIStrategy(bt.Strategy):
+    params = {
+        ('rsi_period', 14),
+        ('rsi_lower', 30),
+        ('rsi_upper', 70),
+    }
 
     def __init__(self):
-        self.sma_fast = bt.indicators.SMA(period=self.p.fast)
-        self.sma_slow = bt.indicators.SMA(period=self.p.slow)
-        self.crossover = bt.indicators.CrossOver(self.sma_fast, self.sma_slow)
+        self.rsi = bt.indicators.RSI(self.data.close, period=self.params.rsi_period)
 
     def next(self):
         cash = self.broker.getcash()
@@ -15,16 +17,18 @@ class SMACrossover(bt.Strategy):
         size = risk_per_trade // self.data.close[0]
 
         if not self.position:
-            if self.crossover > 0:
-                # buy signal
+            # Buy Signal
+            if self.rsi[0] < self.params.rsi_lower:
                 self.buy(size=size)
-                # stop-loss for each trade. If stock falls beow this %age of entry price, exit and book losses
+                # stop-loss for each trade. If stock falls beow this %age of entry price, exit and book losses               
                 self.stop_loss_price = self.data.close[0] * 0.90
+
         else:
             # Close position if price falls below stop-loss
             if self.data.close[0] < self.stop_loss_price:
                 self.close()
 
             # Close Signal based on indicator trigger
-            elif self.crossover < 0:
+            elif self.rsi[0] > self.params.rsi_upper:
                 self.close()
+    

@@ -1,0 +1,29 @@
+Metric,Value
+Trade Analysis,
+total - total,5
+total - open,1
+total - closed,4
+streak - won,"AutoOrderedDict({'current': 4, 'longest': 4})"
+streak - lost,"AutoOrderedDict({'current': 0, 'longest': 0})"
+pnl - gross,"AutoOrderedDict({'total': 3039.992745112764, 'average': 759.998186278191})"
+pnl - net,"AutoOrderedDict({'total': 2993.5862563136156, 'average': 748.3965640784039})"
+won - total,4
+won - pnl,"AutoOrderedDict({'total': 2993.5862563136156, 'average': 748.3965640784039, 'max': 1941.098077093572})"
+lost - total,0
+lost - pnl,"AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0})"
+long - total,4
+long - pnl,"AutoOrderedDict({'total': 2993.5862563136156, 'average': 748.3965640784039, 'won': AutoOrderedDict({'total': 2993.5862563136156, 'average': 748.3965640784039, 'max': 1941.098077093572}), 'lost': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0})})"
+long - won,4
+long - lost,0
+short - total,0
+short - pnl,"AutoOrderedDict({'total': 0.0, 'average': 0.0, 'won': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0}), 'lost': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0})})"
+short - won,0
+short - lost,0
+len - total,341
+len - average,85.25
+len - max,137
+len - min,50
+len - won,"AutoOrderedDict({'total': 341, 'average': 85.25, 'max': 137, 'min': 50})"
+len - lost,"AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0})"
+len - long,"AutoOrderedDict({'total': 341, 'average': 85.25, 'max': 137, 'min': 50, 'won': AutoOrderedDict({'total': 341, 'average': 85.25, 'max': 137, 'min': 50}), 'lost': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807})})"
+len - short,"AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807, 'won': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807}), 'lost': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807})})"
