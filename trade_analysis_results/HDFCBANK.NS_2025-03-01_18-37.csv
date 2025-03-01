@@ -1,0 +1,30 @@
+Created by Akshay Himatsingka akshayhimat@gmail.com
+Metric,Value
+Trade Analysis,
+total - total,15
+total - open,0
+total - closed,15
+streak - won,"AutoOrderedDict({'current': 15, 'longest': 15})"
+streak - lost,"AutoOrderedDict({'current': 0, 'longest': 0})"
+pnl - gross,"AutoOrderedDict({'total': 6704.4038992311835, 'average': 446.96025994874554})"
+pnl - net,"AutoOrderedDict({'total': 6517.961052096262, 'average': 434.5307368064175})"
+won - total,15
+won - pnl,"AutoOrderedDict({'total': 6517.961052096262, 'average': 434.5307368064175, 'max': 1057.9750476833206})"
+lost - total,0
+lost - pnl,"AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0})"
+long - total,15
+long - pnl,"AutoOrderedDict({'total': 6517.961052096262, 'average': 434.5307368064175, 'won': AutoOrderedDict({'total': 6517.961052096262, 'average': 434.5307368064175, 'max': 1057.9750476833206}), 'lost': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0})})"
+long - won,15
+long - lost,0
+short - total,0
+short - pnl,"AutoOrderedDict({'total': 0.0, 'average': 0.0, 'won': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0}), 'lost': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0})})"
+short - won,0
+short - lost,0
+len - total,428
+len - average,28.533333333333335
+len - max,72
+len - min,9
+len - won,"AutoOrderedDict({'total': 428, 'average': 28.533333333333335, 'max': 72, 'min': 9})"
+len - lost,"AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0})"
+len - long,"AutoOrderedDict({'total': 428, 'average': 28.533333333333335, 'max': 72, 'min': 9, 'won': AutoOrderedDict({'total': 428, 'average': 28.533333333333335, 'max': 72, 'min': 9}), 'lost': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807})})"
+len - short,"AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807, 'won': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807}), 'lost': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807})})"
