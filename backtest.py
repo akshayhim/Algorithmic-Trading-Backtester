@@ -1,11 +1,11 @@
 import os
 import csv
 import backtrader as bt
+import data_loader
 from strategies.sma_cross import SMACrossover
 from strategies.rsi_strategy import RSIStrategy
 from strategies.bollinger_strategy import BollingerStrategy
 from strategies.multi_signal_strategy import MultiSignalStrategy
-import data_loader
 from datetime import datetime
 
 cerebro = bt.Cerebro()
@@ -27,6 +27,8 @@ cerebro.addanalyzer(bt.analyzers.TradeAnalyzer, _name='trade_analyzer')
 cerebro.addanalyzer(bt.analyzers.SharpeRatio, _name='sharpe')
 cerebro.addanalyzer(bt.analyzers.DrawDown, _name='drawdown')
 cerebro.addanalyzer(bt.analyzers.Returns, _name='returns')
+
+print("Project by Akshay Himatsingka akshayhimat@gmail.com")
 
 print("\nStarting Portfolio Value: %.2f" % cerebro.broker.getvalue())
 
@@ -81,6 +83,8 @@ filename = f"{output_folder}/{data_loader.ticker}_{timestamp}.csv"
 
 with open(filename, mode="w", newline="") as csv_file:
     writer = csv.writer(csv_file)
+
+    writer.writerow(["Created by Akshay Himatsingka akshayhimat@gmail.com"])
 
     # Write header row for trade analysis
     writer.writerow(["Metric", "Value"])
