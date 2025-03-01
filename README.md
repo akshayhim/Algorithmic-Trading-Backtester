@@ -59,12 +59,12 @@ View performance metrics and detialed analysis in the terminal and the generated
 ## Project Structure
 
 algorithmic-trading-backtester/  
-strategies/
-sma_strategy.py # SMA strategy logic
-rsi_strategy.py # RSI strategy logic
-bollinger_strategy.py # Bollinger Bands strategy logic
+strategies/  
+sma_strategy.py # SMA strategy logic  
+rsi_strategy.py # RSI strategy logic  
+bollinger_strategy.py # Bollinger Bands strategy logic  
 multi_signal_strategy.py # Multi-signal strategy combining all indicators
 
-data_loader.py # Fetches historical stock data
-backtest.py # Main script to run backtests
+data_loader.py # Fetches historical stock data  
+backtest.py # Main script to run backtests  
 requirements.txt # Python dependencies
