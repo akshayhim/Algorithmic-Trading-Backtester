@@ -19,8 +19,8 @@ class SMACrossover(bt.Strategy):
             if self.crossover > 0:
                 # buy signal
                 self.buy(size=size)
-                # putting stop-loss to 1% of entry price for each trade for risk management
-                self.stop_loss_price = self.data.close[0] * 0.99
+                # putting stop-loss on entry price for each trade, means if stock falls beow this %age, exit and book losses
+                self.stop_loss_price = self.data.close[0] * 0.40
         else:
             if self.data.close[0] < self.stop_loss_price:
                 # Exit position if price falls below stop-loss
