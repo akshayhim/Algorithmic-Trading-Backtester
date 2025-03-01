@@ -9,8 +9,23 @@ class SMACrossover(bt.Strategy):
         self.crossover = bt.indicators.CrossOver(self.sma_fast, self.sma_slow)
 
     def next(self):
+        #
+        cash = self.broker.getcash()
+        # tweak this value to decide how much cash allocated for each trade, increasing => more risk & potentially reward and vice versa 
+        risk_per_trade = cash * 0.50
+        size = risk_per_trade // self.data.close[0]
+
         if not self.position:
             if self.crossover > 0:
-                self.buy()
-        elif self.crossover < 0:
-            self.close()
+                # buy signal
+                self.buy(size=size)
+                # putting stop-loss to 1% of entry price for each trade for risk management
+                self.stop_loss_price = self.data.close[0] * 0.99
+        else:
+            if self.data.close[0] < self.stop_loss_price:
+                # Exit position if price falls below stop-loss
+                self.close()
+
+        # sell signal
+            elif self.crossover < 0:
+                self.close()
