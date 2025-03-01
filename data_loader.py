@@ -1,8 +1,16 @@
+import os
 import yfinance as yf
 
-def fetch_data(ticker="HDFCBANK.NS", period="5y"):
-    """fetch historical data"""
+def fetch_data(ticker="SBIN.NS", period="5y"):
+    """Fetch historical data and save it to a CSV file."""
+
+    if not os.path.exists("data"):
+        os.makedirs("data")
+
     df = yf.Ticker(ticker).history(period=period)
-    df.to_csv(f"data/{ticker}.csv")
+
+    csv_path = f"data/{ticker}.csv"
+    df.to_csv(csv_path)
+
     return df
     
