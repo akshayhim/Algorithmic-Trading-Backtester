@@ -60,22 +60,22 @@ View performance metrics and detialed analysis in the terminal and the generated
 
 algorithmic-trading-backtester/  
 strategies/  
-sma_strategy.py # SMA strategy logic  
-rsi_strategy.py # RSI strategy logic  
-bollinger_strategy.py # Bollinger Bands strategy logic  
-multi_signal_strategy.py # Multi-signal strategy combining all indicators
+sma_strategy.py  
+rsi_strategy.py  
+bollinger_strategy.py  
+multi_signal_strategy.py
 
-data_loader.py # Fetches historical stock data  
-backtest.py # Main script to run backtests  
-requirements.txt # Python dependencies
+data_loader.py  
+backtest.py  
+requirements.txt
 
 ## Customizable Data Points for Tailored Backtesting
 
-- in backtest.py you can tweak cerebro.addstrategy to select the indicator of your choice
-- in backtest.py you can tweak cerebro.broker.set_cash & setcommission to alter initial portfolio cash and brokerage comission
-- in individual stratergies files, you can alter the params to depending on your trading style (ex - Fast SMA period, RSI period, etc)
-- in individual stratergies files, you can alter the risk_per_trade to decide %age of portfolio cash allocated for each trade depending on your risk apetite
-- similarly you can alter self.stop_loss_price to change the stop-loss for each trade
+- In backtest.py you can tweak cerebro.addstrategy to select the indicator of your choice
+- In backtest.py you can tweak cerebro.broker.set_cash & setcommission to alter initial portfolio cash and brokerage comission
+- In individual stratergies files, you can alter the params to depending on your trading style (ex - Fast SMA period, RSI period, etc)
+- In individual stratergies files, you can alter the risk_per_trade to decide %age of portfolio cash allocated for each trade depending on your risk apetite
+- In individual stratergies files, you can alter self.stop_loss_price to change the stop-loss for each trade
 
 ## Performance Metrics
 
