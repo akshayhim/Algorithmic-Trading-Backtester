@@ -1,0 +1,29 @@
+Metric,Value
+Trade Analysis,
+total - total,12
+total - open,0
+total - closed,12
+streak - won,"AutoOrderedDict({'current': 1, 'longest': 5})"
+streak - lost,"AutoOrderedDict({'current': 0, 'longest': 3})"
+pnl - gross,"AutoOrderedDict({'total': 1487.0461912184637, 'average': 123.92051593487197})"
+pnl - net,"AutoOrderedDict({'total': 1351.439062953298, 'average': 112.61992191277483})"
+won - total,7
+won - pnl,"AutoOrderedDict({'total': 7045.943490449039, 'average': 1006.5633557784341, 'max': 2688.1751121251295})"
+lost - total,5
+lost - pnl,"AutoOrderedDict({'total': -5694.504427495741, 'average': -1138.9008854991482, 'max': -1684.078})"
+long - total,12
+long - pnl,"AutoOrderedDict({'total': 1351.439062953298, 'average': 112.61992191277483, 'won': AutoOrderedDict({'total': 7045.943490449039, 'average': 1006.5633557784341, 'max': 2688.1751121251295}), 'lost': AutoOrderedDict({'total': -5694.504427495741, 'average': -1138.9008854991482, 'max': -1684.078})})"
+long - won,7
+long - lost,5
+short - total,0
+short - pnl,"AutoOrderedDict({'total': 0.0, 'average': 0.0, 'won': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0}), 'lost': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0})})"
+short - won,0
+short - lost,0
+len - total,391
+len - average,32.583333333333336
+len - max,105
+len - min,2
+len - won,"AutoOrderedDict({'total': 293, 'average': 41.857142857142854, 'max': 105, 'min': 6})"
+len - lost,"AutoOrderedDict({'total': 98, 'average': 19.6, 'max': 37, 'min': 2})"
+len - long,"AutoOrderedDict({'total': 391, 'average': 32.583333333333336, 'max': 105, 'min': 2, 'won': AutoOrderedDict({'total': 293, 'average': 41.857142857142854, 'max': 105, 'min': 6}), 'lost': AutoOrderedDict({'total': 98, 'average': 19.6, 'max': 37, 'min': 2})})"
+len - short,"AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807, 'won': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807}), 'lost': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807})})"
