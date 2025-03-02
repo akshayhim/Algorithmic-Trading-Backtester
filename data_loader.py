@@ -1,7 +1,7 @@
 import os
 import yfinance as yf
 
-ticker="KANSAINER.NS"
+ticker="ADANIENT.NS"
 period="5y"
 
 def fetch_data(ticker=ticker, period=period):

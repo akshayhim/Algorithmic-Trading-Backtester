@@ -1,0 +1,30 @@
+Created by Akshay Himatsingka akshayhimat@gmail.com
+Metric,Value
+Trade Analysis,
+total - total,5
+total - open,1
+total - closed,4
+streak - won,"AutoOrderedDict({'current': 0, 'longest': 1})"
+streak - lost,"AutoOrderedDict({'current': 1, 'longest': 2})"
+pnl - gross,"AutoOrderedDict({'total': -3099.436872445513, 'average': -774.8592181113783})"
+pnl - net,"AutoOrderedDict({'total': -3105.766267118902, 'average': -776.4415667797255})"
+won - total,1
+won - pnl,"AutoOrderedDict({'total': 521.4182760496443, 'average': 521.4182760496443, 'max': 521.4182760496443})"
+lost - total,3
+lost - pnl,"AutoOrderedDict({'total': -3627.184543168546, 'average': -1209.0615143895154, 'max': -1397.371633159307})"
+long - total,4
+long - pnl,"AutoOrderedDict({'total': -3105.766267118902, 'average': -776.4415667797255, 'won': AutoOrderedDict({'total': 521.4182760496443, 'average': 521.4182760496443, 'max': 521.4182760496443}), 'lost': AutoOrderedDict({'total': -3627.184543168546, 'average': -1209.0615143895154, 'max': -1397.371633159307})})"
+long - won,1
+long - lost,3
+short - total,0
+short - pnl,"AutoOrderedDict({'total': 0.0, 'average': 0.0, 'won': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0}), 'lost': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0})})"
+short - won,0
+short - lost,0
+len - total,817
+len - average,204.25
+len - max,340
+len - min,7
+len - won,"AutoOrderedDict({'total': 178, 'average': 178.0, 'max': 178, 'min': 178})"
+len - lost,"AutoOrderedDict({'total': 639, 'average': 213.0, 'max': 340, 'min': 7})"
+len - long,"AutoOrderedDict({'total': 817, 'average': 204.25, 'max': 340, 'min': 7, 'won': AutoOrderedDict({'total': 178, 'average': 178.0, 'max': 178, 'min': 178}), 'lost': AutoOrderedDict({'total': 639, 'average': 213.0, 'max': 340, 'min': 7})})"
+len - short,"AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807, 'won': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807}), 'lost': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807})})"

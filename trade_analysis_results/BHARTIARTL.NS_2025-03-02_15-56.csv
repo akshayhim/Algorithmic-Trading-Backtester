@@ -1,0 +1,30 @@
+Created by Akshay Himatsingka akshayhimat@gmail.com
+Metric,Value
+Trade Analysis,
+total - total,4
+total - open,1
+total - closed,3
+streak - won,"AutoOrderedDict({'current': 1, 'longest': 1})"
+streak - lost,"AutoOrderedDict({'current': 0, 'longest': 2})"
+pnl - gross,"AutoOrderedDict({'total': 7310.440264515066, 'average': 2436.813421505022})"
+pnl - net,"AutoOrderedDict({'total': 7304.546912024692, 'average': 2434.8489706748974})"
+won - total,1
+won - pnl,"AutoOrderedDict({'total': 9899.609104617746, 'average': 9899.609104617746, 'max': 9899.609104617746})"
+lost - total,2
+lost - pnl,"AutoOrderedDict({'total': -2595.0621925930545, 'average': -1297.5310962965273, 'max': -1431.972574551483})"
+long - total,3
+long - pnl,"AutoOrderedDict({'total': 7304.546912024692, 'average': 2434.8489706748974, 'won': AutoOrderedDict({'total': 9899.609104617746, 'average': 9899.609104617746, 'max': 9899.609104617746}), 'lost': AutoOrderedDict({'total': -2595.0621925930545, 'average': -1297.5310962965273, 'max': -1431.972574551483})})"
+long - won,1
+long - lost,2
+short - total,0
+short - pnl,"AutoOrderedDict({'total': 0.0, 'average': 0.0, 'won': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0}), 'lost': AutoOrderedDict({'total': 0.0, 'average': 0.0, 'max': 0.0})})"
+short - won,0
+short - lost,0
+len - total,824
+len - average,274.6666666666667
+len - max,722
+len - min,17
+len - won,"AutoOrderedDict({'total': 722, 'average': 722.0, 'max': 722, 'min': 722})"
+len - lost,"AutoOrderedDict({'total': 102, 'average': 51.0, 'max': 85, 'min': 17})"
+len - long,"AutoOrderedDict({'total': 824, 'average': 274.6666666666667, 'max': 722, 'min': 17, 'won': AutoOrderedDict({'total': 722, 'average': 722.0, 'max': 722, 'min': 722}), 'lost': AutoOrderedDict({'total': 102, 'average': 51.0, 'max': 85, 'min': 17})})"
+len - short,"AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807, 'won': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807}), 'lost': AutoOrderedDict({'total': 0, 'average': 0.0, 'max': 0, 'min': 9223372036854775807})})"

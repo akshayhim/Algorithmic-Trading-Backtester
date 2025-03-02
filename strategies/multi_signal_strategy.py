@@ -5,7 +5,7 @@ class MultiSignalStrategy(bt.Strategy):
         ('fast', 18),         # Fast SMA period
         ('slow', 50),         # Slow SMA period
         ('rsi_period', 15),   # RSI period
-        ('rsi_lower', 30),    # RSI oversold threshold
+        ('rsi_lower', 32),    # RSI oversold threshold
         ('rsi_upper', 67),    # RSI overbought threshold
         ('bb_period', 27),    # Bollinger Bands period
     )

@@ -8,10 +8,8 @@ from strategies.bollinger_strategy import BollingerStrategy
 from strategies.multi_signal_strategy import MultiSignalStrategy
 from datetime import datetime
 
-# Initialize Cerebro engine
 cerebro = bt.Cerebro()
 
-# Load data
 data = bt.feeds.PandasData(dataname=data_loader.fetch_data())
 cerebro.adddata(data)
 
@@ -56,7 +54,7 @@ total_return = ((end_portfolio - init_portfolio) / init_portfolio) * 100
 print(f"Total Return: {total_return:.2f}%")
 
 
-# Extracting integer part from period #
+# Extracting integer part from period
 number = int(data_loader.period[0])
 unit = data_loader.period[1]
 if unit == 'y':
