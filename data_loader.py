@@ -1,8 +1,8 @@
 import os
 import yfinance as yf
 
-ticker="KOTAKBANK.NS"
-period="1y"
+ticker="KANSAINER.NS"
+period="5y"
 
 def fetch_data(ticker=ticker, period=period):
     
@@ -16,4 +16,3 @@ def fetch_data(ticker=ticker, period=period):
     df.to_csv(csv_path)
 
     return df
-    

@@ -24,8 +24,8 @@ cerebro.broker.set_cash(10000)
 # Set brokerage commission
 cerebro.broker.setcommission(commission=0.0001)
 
-# tweak to decide %age of cash allocated for each trade, increasing => more risk & potentially reward and vice versa 
-cerebro.addsizer(bt.sizers.PercentSizer, percents=80)
+# Tweak to decide %age of cash allocated for each trade, increasing => more risk & potentially reward and vice versa 
+cerebro.addsizer(bt.sizers.PercentSizer, percents=99)
 
 # Adding analyzers for performance metrics
 cerebro.addanalyzer(bt.analyzers.TradeAnalyzer, _name='trade_analyzer')
@@ -63,7 +63,7 @@ if unit == 'y':
     period_reciprocal = 1 / number
 elif unit == 'm':
     period_reciprocal = 1 / (number / 12)
-#######################################
+    
 
 # Annualized Return
 annualized_return = ((end_portfolio / init_portfolio) ** period_reciprocal) - 1
